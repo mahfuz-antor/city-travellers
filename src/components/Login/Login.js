@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
 import firebaseConfig from '../../firebase-config';
 import { useState } from 'react';
 import Header from '../Header/Header';
+import { UserContex } from '../../App';
+import { useHistory, useLocation } from 'react-router';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }
 
 const Login = () => {
+  const history = useHistory();
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
+  const [loggedInUser, setLoggedInUser] = useContext(UserContex);
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
@@ -31,7 +37,8 @@ const Login = () => {
               email: email,
               photo: photoURL
             }
-            setUser(signedInUser);
+            setLoggedInUser(signedInUser);
+            history.replace(from);
             console.log(displayName, email, photoURL);
           })
           .catch(err => {
@@ -186,6 +193,7 @@ const Login = () => {
       return (
         <div className="App">
             <Header></Header>
+            <div className="container">
           {
             user.isSignedIn ?
               <button onClick={handleSignOut}>Sign out </button> :
@@ -206,6 +214,7 @@ const Login = () => {
           <h1>Our own Authentication</h1>
           <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
           <label htmlFor="newUser">New User Sign up</label>
+
           <form onSubmit={handleSubmit}>
             {newUser && <input name="name" onBlur={handleChange} type="text" placeholder="Your Name" />}
             <br />
@@ -217,6 +226,7 @@ const Login = () => {
           </form>
           <p style={{ color: 'red' }}>{user.error}</p>
           { user.success && <p style={{ color: 'green' }}>User {newUser ? 'created' : 'Logged In'} successfully.</p>}
+          </div>
         </div>
       );
     }

@@ -3,6 +3,7 @@ import Login from '../Login/Login';
 import BgImg from '../../images/Frame-1.png'
 import Header from '../Header/Header';
 import Vehicle from '../../fakeData/data.json';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -33,10 +34,13 @@ const Home = () => {
             <div  className="container">
                 {
                     data.map(data =>
-                        <div style={cardStyle}>
+                        <Link to="/places"> <div style={cardStyle}>
                             <img style={imgStyle} src={data.img} alt="" />
                             <h5>{data.name}</h5>
-                        </div>)
+                        </div> 
+                        </Link>
+                        
+                        )
                 }
             </div>
 
