@@ -53,14 +53,14 @@ const Login = () => {
           .signInWithPopup(fbProvider)
           .then(result => {
             /** @type {firebase.auth.OAuthCredential} */
-            // var credential = result.credential;
+            var credential = result.credential;
     
             // The signed-in user info.
             var user = result.user;
             
     
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-            // var accessToken = credential.accessToken;
+            var accessToken = credential.accessToken;
             console.log('fb user after Sing in', user);
             // console.log('fb user after Sing in', accessToken);
     
@@ -71,7 +71,8 @@ const Login = () => {
               email: email,
               photo: photoURL
             }
-            setUser(signedInFbUser);
+            setLoggedInUser(signedInFbUser);
+            history.replace(from);
             console.log(displayName, email, photoURL);
     
     
@@ -158,12 +159,25 @@ const Login = () => {
           firebase.auth().signInWithEmailAndPassword(user.email, user.password)
             .then(res => {
               // Signed in
+
+              const { displayName, email, photoURL } = res.user;
+            const signedInUser = {
+              isSignedIn: true,
+              name: displayName,
+              email: email,
+              photo: photoURL
+            }
+            setLoggedInUser(signedInUser);
+            history.replace(from);
+            console.log(displayName, email, photoURL);
+
               // var user = userCredential.user;
-              const newUserInfo = { ...user };
-              newUserInfo.error = '';
-              newUserInfo.success = true;
-              setUser(newUserInfo);
-              console.log('sign In user info', res.user);
+              // const newUserInfo = { ...user };
+              // newUserInfo.error = '';
+              // newUserInfo.success = true;
+              // setUser(newUserInfo);
+              // console.log('sign In user info', res.user);
+              
             })
             .catch((error) => {
               const newUserInfo = { ...user };

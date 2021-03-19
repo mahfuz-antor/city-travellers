@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Login from '../Login/Login';
-import BgImg from '../../images/Frame-1.png'
+import BgImg from '../../images/thumb-1920-85305.jpg'
 import Header from '../Header/Header';
 import Vehicle from '../../fakeData/data.json';
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ const Home = () => {
         height: '150px'
     }
     return (
-        <div style={{width:'100%', overflow: 'hidden', backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${BgImg})` }}>
+        <div style={{width:'100%', height:'500px', backgroundRepeat:'no-repeat', overflow: 'hidden', backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${BgImg})` }}>
             <h1>This is Home Page.</h1>
             <Header></Header>
             <div  className="container">
