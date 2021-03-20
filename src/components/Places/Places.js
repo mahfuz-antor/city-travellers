@@ -5,10 +5,11 @@ import "firebase/auth";
 // import firebaseConfig from '../../firebase-config';
 import { useState } from 'react';
 import Header from '../Header/Header';
+import mapImg from '../../images/Map.png';
+// import Tickets from '../Tickets/Tickets';
+import { Link } from 'react-router-dom';
 
-const handleSubmit = () => {
 
-}
 
 const Places = () => {
 
@@ -32,15 +33,25 @@ const Places = () => {
       }
 
     //   const [loggedInUser, setLoggedInUser] = useState({});
+    const mapStyle = {
+        marginLeft: '50px'
+    }
         
 
     return (
         
-        <div className="App">
+        <div>
             <Header></Header>
-          <div className="container">
-            <h5>Select Visiting Place</h5>
-            <form>
+            <div className="container">
+            <p>Starting: {user.start}</p>
+            <p>Ending: {user.end}</p>
+            <p>Time: {user.time}</p>
+            <p>Date: {user.date}</p>
+          </div>
+          <div className="container d-flex m-5">
+          
+            
+            <form className="container"><h5>Select Visiting Place</h5>
               <p>Type Your Starting Place</p>
               <input type="text" onBlur={handleChange} name="start" placeholder="Your starting place" required />
               <br />
@@ -55,14 +66,18 @@ const Places = () => {
               <input type="date" name="date" id="" onBlur={handleChange} required />
               <br />
               <br />
-              <input onClick={handleSubmit} type="submit" value="Search" />
+              {/* <input onClick={handleSubmit} type="submit" value="Search" /> */}
+               <button><Link class="nav-link text-dark" to="/tickets">Search</Link></button>
             </form>
+           
             <br/>
-            {/* <p>Starting: {user.start}</p>
-            <p>Ending: {user.end}</p>
-            <p>Time: {user.time}</p>
-            <p>Date: {user.date}</p> */}
+            <div><img style={mapStyle} src={mapImg} alt=""/></div>
+            
+            
           </div>
+          
+          
+
         </div>
       );
 };

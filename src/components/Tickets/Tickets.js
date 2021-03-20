@@ -2,12 +2,13 @@ import React, { } from 'react';
 // import Form from '../Form/Form';
 import Header from '../Header/Header';
 import fakeData from '../../fakeData/data.json';
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import mapImg from '../../images/Map.png';
 
 
 const Tickets = () => {
 
-    const {id} = useParams();
+    const { id } = useParams();
     const result = fakeData.find(rider => rider.name === "Bike");
     const result1 = fakeData.find(rider => rider.name === "Auto");
     // const result2 = fakeData.find(tree => tree.name === "Bike");
@@ -15,18 +16,40 @@ const Tickets = () => {
     console.log(result.name, result1.name);
     console.log(id);
 
-const bikeStyle = {
-    width:'80px',
-    height:'50px'
-}
+    const bikeStyle = {
+        width: '100px',
+        height: '80px',
+        padding: '10px'
+    }
+
+    const mapStyle = {
+        marginLeft: '200px',
+        width: '500px'
+    }
+
     return (
         <div>
             <Header></Header>
-            <div>
-                <h1>You Select: {result.name + ' ' + result.salary}</h1>
-                <img style={bikeStyle} src={result.img} alt="" />
+            <div className="container mt-5">
+                <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
+                    <img style={bikeStyle} src={result.img} alt="" />
+                    <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
+                    <div><img style={mapStyle} src={mapImg} alt=""/></div>
+                </div>
+
+                <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
+                    <img style={bikeStyle} src={result.img} alt="" />
+                    <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
+                </div>
+                <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
+                    <img style={bikeStyle} src={result.img} alt="" />
+                    <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
+                    
+                </div>
+                
             </div>
 
+            
         </div>
     );
 };
