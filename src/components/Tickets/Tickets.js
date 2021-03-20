@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from '../Form/Form';
 import Header from '../Header/Header';
 
 const Tickets = () => {
@@ -6,6 +7,7 @@ const Tickets = () => {
         <div>
             <h1>This is Tickets Page.</h1>
             <Header></Header>
+            <Form></Form>
         </div>
     );
 };
