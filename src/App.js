@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Places from './components/Places/Places';
 import Tickets from './components/Tickets/Tickets';
+// import fakeData from './fakeData/data.json';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +22,6 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContex.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.name}</p>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -43,6 +43,7 @@ function App() {
             <Tickets></Tickets>
           </Route>
         </Switch>
+        {/* <h1>Name: {loggedInUser.name}</h1> */}
       </Router>
     </UserContex.Provider>
   );

@@ -2,24 +2,24 @@
   "id": 1,
   "name": "Bike",
   "email": "dgriffe0@cisco.com",
-  "salary": 12143,
+  "salary": 143,
   "img": "https://www.thehindu.com/life-and-style/motoring/u5qdjn/article26121531.ece/alternates/FREE_435/Harley-Davidson-CVO"
 }, {
   "id": 2,
   "name": "Auto",
   "email": "bpull1@shinystat.com",
-  "salary": 22143,
+  "salary": 200,
   "img": "https://etimg.etb2bimg.com/photo/73261876.cms"
 }, {
   "id": 3,
   "name": "Car",
   "email": "rmcginn2@wikia.com",
-  "salary": 22143,
+  "salary": 333,
   "img": "https://thumbor.forbes.com/thumbor/trim/512x602:5312x3303/fit-in/711x400/smart/https://specials-images.forbesimg.com/imageserve/5d35eb15f1176b0008974b5c/0x0.jpg"
 }, {
   "id": 4,
   "name": "Bus",
   "email": "rsalliss3@stanford.edu",
-  "salary": 22143,
+  "salary": 2243,
   "img": "https://media.wired.com/photos/5cf832279c2a7cd3975976ca/16:9/w_2000,h_1125,c_limit/Transpo_XcelsiorChargeCharging_TA.jpg"
 }]

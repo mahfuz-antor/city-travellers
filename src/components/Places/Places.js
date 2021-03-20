@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import firebase from "firebase/app";
+import React, { } from 'react';
+// import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-import firebaseConfig from '../../firebase-config';
+// import firebaseConfig from '../../firebase-config';
 import { useState } from 'react';
 import Header from '../Header/Header';
 
@@ -11,6 +11,7 @@ const handleSubmit = () => {
 }
 
 const Places = () => {
+
     const [user, setUser] = useState({
         name: '',
         start: '',
@@ -19,7 +20,7 @@ const Places = () => {
         date: null
       })
     
-      const [newUser, setNewUser] = useState(false);
+    //   const [newUser, setNewUser] = useState(false);
     
       const handleChange = (e) => {
         let isFieldValid = true;
@@ -30,7 +31,11 @@ const Places = () => {
         }
       }
 
+    //   const [loggedInUser, setLoggedInUser] = useState({});
+        
+
     return (
+        
         <div className="App">
             <Header></Header>
           <div className="container">
@@ -53,10 +58,10 @@ const Places = () => {
               <input type="submit" value="Search" />
             </form>
             <br/>
-            <p>Starting: {user.start}</p>
+            {/* <p>Starting: {user.start}</p>
             <p>Ending: {user.end}</p>
             <p>Time: {user.time}</p>
-            <p>Date: {user.date}</p>
+            <p>Date: {user.date}</p> */}
           </div>
         </div>
       );

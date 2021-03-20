@@ -1,50 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import Login from '../Login/Login';
+import React, { useContext, useEffect, useState } from 'react';
+// import Login from '../Login/Login';
 import BgImg from '../../images/thumb-1920-85305.jpg'
 import Header from '../Header/Header';
-import Vehicle from '../../fakeData/data.json';
+import fakeData from '../../fakeData/data.json';
 import { Link } from 'react-router-dom';
+import { UserContex } from '../../App';
 
 const Home = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        setData(Vehicle);
-        console.log(Vehicle);
-        const names = Vehicle.map(data => data.name)
+        setData(fakeData);
+        console.log(fakeData);
+        const names = fakeData.map(data => data.name)
         console.log(names);
     }, [])
 
     const cardStyle = {
         width: '200px',
-        height: '200px',
+        height: '250px',
         float: 'left',
         color: 'lightblue',
-        margin: '20px'
+        margin: '25px',
+        marginBottom: '100px',
+        marginTop: '50px',
+        backgroundColor: 'gray',
+        borderRadius: '20px'
     }
 
     const imgStyle = {
-        width: '180px',
-        height: '150px'
+        width: '190px',
+        height: '190px',
+        borderRadius: '20px'
     }
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContex);
     return (
-        <div style={{width:'100%', height:'500px', backgroundRepeat:'no-repeat', overflow: 'hidden', backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${BgImg})` }}>
-            <h1>This is Home Page.</h1>
+        <div style={{backgroundSize:'100% 100%', backgroundRepeat:'no-repeat', overflow: 'hidden', backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${BgImg})` }}>
+
             <Header></Header>
             <div  className="container">
                 {
                     data.map(data =>
-                        <Link to="/places"> <div style={cardStyle}>
-                            <img style={imgStyle} src={data.img} alt="" />
-                            <h5>{data.name}</h5>
+                        <Link  className="text-center" to="/places"> <div style={cardStyle}>
+                            <img className="p-2" style={imgStyle} src={data.img} alt="" />
+                            <h2 className="text-center">{data.name}</h2>
                         </div> 
                         </Link>
                         
                         )
                 }
             </div>
-
-
 
         </div>
     );
