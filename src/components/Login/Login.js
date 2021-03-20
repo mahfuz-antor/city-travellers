@@ -62,6 +62,7 @@ const Login = () => {
     
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var accessToken = credential.accessToken;
+            console.log(accessToken);
             console.log('fb user after Sing in', user);
             // console.log('fb user after Sing in', accessToken);
     
@@ -226,7 +227,7 @@ const Login = () => {
             </div>
           }
     
-          <h1>Our own Authentication</h1>
+          <h3>Log in or Sign up here</h3>
           <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
           <label htmlFor="newUser">New User Sign up</label>
 
