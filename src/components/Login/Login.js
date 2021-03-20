@@ -24,6 +24,7 @@ const Login = () => {
         password: '',
         photo: ''
       })
+      console.log(loggedInUser);
     
       const googleProvider = new firebase.auth.GoogleAuthProvider();
       const fbProvider = new firebase.auth.FacebookAuthProvider();

@@ -55,7 +55,7 @@ const Places = () => {
               <input type="date" name="date" id="" onBlur={handleChange} required />
               <br />
               <br />
-              <input type="submit" value="Search" />
+              <input onClick={handleSubmit} type="submit" value="Search" />
             </form>
             <br/>
             {/* <p>Starting: {user.start}</p>

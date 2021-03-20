@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Login from '../Login/Login';
 import BgImg from '../../images/thumb-1920-85305.jpg'
 import Header from '../Header/Header';
 import fakeData from '../../fakeData/data.json';
 import { Link } from 'react-router-dom';
-import { UserContex } from '../../App';
+// import { UserContex } from '../../App';
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -34,7 +34,7 @@ const Home = () => {
         borderRadius: '20px'
     }
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContex);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContex);
     return (
         <div style={{backgroundSize:'100% 100%', backgroundRepeat:'no-repeat', overflow: 'hidden', backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${BgImg})` }}>
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContex } from '../../App';
 
@@ -6,7 +6,7 @@ import { UserContex } from '../../App';
 
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContex);
+    const [loggedInUser] = useContext(UserContex);
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
@@ -14,6 +14,7 @@ const Header = () => {
         password: '',
         photo: ''
       })
+      console.log(user, setUser);
     return (
         <div className="container mt-5">
             <nav class="navbar navbar-expand-lg navbar-light bg-secondary rounded">

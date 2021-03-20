@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import Form from '../Form/Form';
+import React, { } from 'react';
+// import Form from '../Form/Form';
 import Header from '../Header/Header';
 import fakeData from '../../fakeData/data.json';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 
 const Tickets = () => {
 
-    let { } = useParams();
-    const result = fakeData.find(tree => tree.name === "Bike");
-    const result1 = fakeData.find(tree => tree.name === "Auto");
+    const {id} = useParams();
+    const result = fakeData.find(rider => rider.name === "Bike");
+    const result1 = fakeData.find(rider => rider.name === "Auto");
     // const result2 = fakeData.find(tree => tree.name === "Bike");
     // const result3 = fakeData.find(tree => tree.name === "Bike");
     console.log(result.name, result1.name);
-    console.log(result.img);
+    console.log(id);
 
 const bikeStyle = {
     width:'80px',
