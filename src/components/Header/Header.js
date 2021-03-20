@@ -19,7 +19,7 @@ const Header = () => {
         <div className="container mt-5">
             <nav class="navbar navbar-expand-lg navbar-light bg-secondary rounded">
                 <div class="container-fluid text-info">
-                    <a class="navbar-brand  text-light" href="../Home">City Travellers</a>
+                    <a class="navbar-brand  text-light" href="../home">City Travellers</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

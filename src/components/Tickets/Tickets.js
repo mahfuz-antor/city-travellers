@@ -34,7 +34,7 @@ const Tickets = () => {
                 <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
                     <img style={bikeStyle} src={result.img} alt="" />
                     <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
-                    <div><img style={mapStyle} src={mapImg} alt=""/></div>
+                    <div><img style={mapStyle} src={mapImg} alt="" /></div>
                 </div>
 
                 <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
@@ -44,12 +44,12 @@ const Tickets = () => {
                 <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
                     <img style={bikeStyle} src={result.img} alt="" />
                     <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
-                    
+
                 </div>
-                
+
             </div>
 
-            
+
         </div>
     );
 };
