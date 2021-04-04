@@ -23,15 +23,15 @@ const Tickets = () => {
     }
 
     const mapStyle = {
-        marginLeft: '200px',
-        width: '500px'
+        marginLeft: '300px',
+        width: '300px'
     }
 
     return (
         <div>
             <Header></Header>
-            <div className="container mt-5">
-                <div className="d-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
+            <div className="container  mt-5">
+                <div className="d-lg-flex d-sm-inline-flex d-md-inline-flex" style={{ width: '250px', height: '80px', backgroundColor: 'gray' }}>
                     <img style={bikeStyle} src={result.img} alt="" />
                     <p className="text-center m-2 text-light">{result.name + ' $' + result.salary}</p>
                     <div><img style={mapStyle} src={mapImg} alt="" /></div>

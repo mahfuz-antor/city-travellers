@@ -34,7 +34,8 @@ const Places = () => {
 
     //   const [loggedInUser, setLoggedInUser] = useState({});
     const mapStyle = {
-        marginLeft: '50px'
+        marginLeft: '50px',
+        backgroundSize: '100% 100%'
     }
 
 
@@ -48,7 +49,7 @@ const Places = () => {
                 <p>Time: {user.time}</p>
                 <p>Date: {user.date}</p>
             </div>
-            <div className="container d-flex m-5">
+            <div className="container d-lg-flex d-sm-inline-flex d-md-inline-flex m-5">
 
 
                 <form className="container"><h5>Select Visiting Place</h5>
